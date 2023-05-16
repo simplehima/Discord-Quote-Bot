@@ -20,10 +20,14 @@ Quote Bot is a Discord bot that automatically sends a random quote along with a 
 
 # Configuration
 To customize the bot's behavior, you can modify the following variables in the quote_bot.py file:
-TOKEN: Your Discord bot token (string)
-TEXT_CHANNEL_ID: The text channel ID where the bot should send messages (integer)
-UNSPLASH_ACCESS_KEY: Your Unsplash API key (string)
-ROLE_ID: The role ID that the bot should mention when sending messages (integer)
+
+*TOKEN:* Your Discord bot token (string)
+
+*TEXT_CHANNEL_ID:* The text channel ID where the bot should send messages (integer)
+
+*UNSPLASH_ACCESS_KEY:* Your Unsplash API key (string)
+
+*ROLE_ID:* The role ID that the bot should mention when sending messages (integer)
 
 # License
 This project is licensed under the MIT License.
