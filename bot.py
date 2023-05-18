@@ -47,13 +47,16 @@ async def send_quote_and_image():
     embed.set_image(url=image_url)
     await channel.send(f'{role.mention}', embed=embed)
 
-# Schedule the bot to send the quote and image every 12 hours
-schedule.every(12).hours.do(lambda: bot.loop.create_task(send_quote_and_image()))
+# Create a loop to send the quote and image every 12 hours
+@tasks.loop(hours=12)
+async def periodic_quote_and_image_sender():
+    await send_quote_and_image()
 
 @bot.event
 async def on_ready():
     print(f'{bot.user} has connected to Discord!')
     await send_quote_and_image()
+    periodic_quote_and_image_sender.start()  # Start the loop when the bot is ready
 
 @bot.event
 async def on_command_error(ctx, error):
